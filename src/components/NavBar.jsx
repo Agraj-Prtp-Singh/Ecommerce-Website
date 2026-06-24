@@ -56,6 +56,8 @@ const NavBar = () => {
           </div>
         </div>
       </div>
+      {/* lower navbar */}
+      <div></div>
     </div>
   );
 };
