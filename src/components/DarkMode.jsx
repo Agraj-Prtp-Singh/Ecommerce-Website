@@ -22,12 +22,13 @@ const DarkMode = () => {
         src={LightButton}
         alt="light_button"
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        className="w-12 cursor-pointer drop-shadow-[1px_1px_1px_rgba(0,0,0,0.1)] 
-        transition-all duration-300 absolute z-40 "
+        className={`w-12 cursor-pointer drop-shadow-[1px_1px_1px_rgba(0,0,0,0.1)] 
+        transition-all duration-300 absolute z-40 ${theme === "dark" ? "opacity-0" : "opacity-100"}`}
       />
       <img
         src={DarkButton}
         alt=""
+        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         className="w-12 cursor-pointer drop-shadow-[1px_1px_1px_rgba(0,0,0,0.1)] 
         transition-all duration-300"
       />
