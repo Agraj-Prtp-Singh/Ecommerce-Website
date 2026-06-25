@@ -4,6 +4,37 @@ import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
 
+const Menu = [
+  {
+    id: 1,
+    name: "Home",
+    link: "/#",
+  },
+
+  {
+    id: 2,
+    name: "Top rated",
+    link: "/services",
+  },
+
+  {
+    id: 3,
+    name: "Kids Wear",
+    link: "/#",
+  },
+
+  {
+    id: 3,
+    name: "Mens Wear",
+    link: "/#",
+  },
+  {
+    id: 3,
+    name: "Electronics",
+    link: "/#",
+  },
+];
+
 const NavBar = () => {
   return (
     <div
@@ -57,7 +88,15 @@ const NavBar = () => {
         </div>
       </div>
       {/* lower navbar */}
-      <div></div>
+      <div className="flex justify-center">
+        <ul className="sm:flex hidden items-center gap-4">
+          {Menu.map((data) => (
+            <li key={data.id}>
+              <a className="hover:bg-gray-200" href={data.link}>{data.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
