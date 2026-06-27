@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../assets/logo.png";
 import { IoMdSearch } from "react-icons/io";
-import { FaCartShopping } from "react-icons/fa6";
+import { FaCaretDown, FaCartShopping } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
 
 const Menu = [
@@ -24,13 +24,33 @@ const Menu = [
   },
 
   {
-    id: 3,
+    id: 4,
     name: "Mens Wear",
     link: "/#",
   },
   {
-    id: 3,
+    id: 5,
     name: "Electronics",
+    link: "/#",
+  },
+];
+
+const DropdownLinks = [
+  {
+    id: 1,
+    name: "Trending Products",
+    link: "/#",
+  },
+
+  {
+    id: 2,
+    name: "Best Selling",
+    link: "/#",
+  },
+
+  {
+    id: 3,
+    name: "Top Rated",
     link: "/#",
   },
 ];
@@ -92,9 +112,32 @@ const NavBar = () => {
         <ul className="sm:flex hidden items-center gap-4">
           {Menu.map((data) => (
             <li key={data.id}>
-              <a className="hover:bg-gray-200" href={data.link}>{data.name}</a>
+              <a
+                className="inline-block px-4 hover:text-primary duration-200"
+                href={data.link}
+              >
+                {data.name}
+              </a>
             </li>
           ))}
+          {/* Drop down */}
+          <li>
+            <a href="#" className="flex items-center gap-[2px] py-2">
+              Trending
+              <span>
+                <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
+              </span>
+            </a>
+            <div>
+              <ul>
+                {DropdownLinks.map((data) => (
+                  <li key={data.id}>
+                    <a href={data.link}>{data.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
