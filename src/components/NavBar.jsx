@@ -79,7 +79,7 @@ const NavBar = () => {
                 placeholder="search"
                 className="w-[200px] sm:w-[200px] group-hover:w-[300px] transition-all duration-300 rounded-full border border-gray-300
                 px-2 py-1 focus:outline-none focus:border focus:border-primary
-                bg-white
+                bg-white dark:border-gray-500 dark:bg-gray-800
                 "
               />
               <IoMdSearch
@@ -121,18 +121,26 @@ const NavBar = () => {
             </li>
           ))}
           {/* Drop down */}
-          <li>
+          <li className="group relative cursor-pointer">
             <a href="#" className="flex items-center gap-[2px] py-2">
-              Trending
+              Trending Products
               <span>
                 <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
               </span>
             </a>
-            <div>
+            <div
+              className="absolute z-40 hidden group-hover:block w-[150px] rounded-md bg-white p-2 text-black"
+              shadow-md
+            >
               <ul>
                 {DropdownLinks.map((data) => (
                   <li key={data.id}>
-                    <a href={data.link}>{data.name}</a>
+                    <a
+                      className="inline-block w-full rounded-md p-2 hover:bg-primary/20"
+                      href={data.link}
+                    >
+                      {data.name}
+                    </a>
                   </li>
                 ))}
               </ul>
