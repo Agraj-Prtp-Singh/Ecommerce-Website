@@ -70,7 +70,7 @@ const Hero = () => {
                   <div className="relative">
                     <img
                       src={data.img}
-                      className="w-[300px] h-[300px] sm:h-[450px] sm:w-[450px] sm:scale-125 object-contain mx-auto"
+                      className="w-[300px] h-[300px] sm:h-[450px] sm:w-[450px] sm:scale-105 object-contain mx-auto"
                       alt=""
                     />
                   </div>
