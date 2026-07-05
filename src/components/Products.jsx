@@ -40,7 +40,7 @@ const ProductsData = [
   },
   {
     id: 5,
-    img: Img5,
+    img: Img2,
     title: "Fashion T-shirt",
     rating: 4.5,
     color: "Pink",
@@ -66,7 +66,21 @@ const Products = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-5">
             {/* Card Sections */}
             {ProductsData.map((data) => (
-              <div></div>
+              <div key={data.id}>
+                <img
+                  src={data.img}
+                  alt="Product Image"
+                  className="h-[220px] w-[150px] object-cover rounded-md"
+                />
+                <div>
+                  <h3 className="font-semibold">{data.title}</h3>
+                  <p className="text-sm text-gray-600">{data.color}</p>
+                  <div className="flex items-center gap-1">
+                    <FaStar className="text-yellow-500" />
+                    <span>{data.rating}</span>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
