@@ -1,13 +1,69 @@
 import React from "react";
 
+const ProductsData = [
+  {
+    id: 1,
+    img: Img1,
+    title: "Women Ethnic",
+    rating: 5.0,
+    color: "white",
+    aosDelay: "0",
+  },
+  {
+    id: 2,
+    img: Img2,
+    title: "Women Western",
+    rating: 4.5,
+    color: "Red",
+    aosDelay: "200",
+  },
+  {
+    id: 3,
+    img: Img3,
+    title: "Goggles",
+    rating: 4.7,
+    color: "brown",
+    aosDelay: "400",
+  },
+  {
+    id: 4,
+    img: Img4,
+    title: "Printed T-shirt",
+    rating: 4.4,
+    color: "Yellow",
+    aosDelay: "600",
+  },
+  {
+    id: 5,
+    img: Img5,
+    title: "Fashion T-shirt",
+    rating: 4.5,
+    color: "Pink",
+    aosDelay: "800",
+  },
+];
+
 const Products = () => {
   return (
-    <div>
-      <div>
+    <div className="mt-14 mb-12">
+      <div className="container">
         {/* Header Section */}
+        <div className="text-center mb-10 max-w-150">
+          <p className="text-sm text-primary">Top Selling Products for you</p>
+          <h1 className="text-3xl font-bold">Products</h1>
+          <p className="text-xs text-gray-400">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sit eum
+            culpa?
+          </p>
+        </div>
+        {/* Body Section */}
         <div>
-          <p>Top Selling Products for you</p>
-          <h1>Products</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 place-items-center gap-5">
+            {/* Card Sections */}
+            {ProductsData.map((data) => (
+              <div></div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
