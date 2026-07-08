@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero.jsx";
 import Products from "./components/Products.jsx";
 import AOS from "aos";
+import "aos/dist/aos.css";
 
 const App = () => {
   useEffect(() => {
@@ -12,8 +13,8 @@ const App = () => {
       easing: "ease-in-sine",
       delay: 100,
     });
-    AOS.refresh();
-  });
+  }, []);
+
   return (
     <div>
       <NavBar />
@@ -24,4 +25,3 @@ const App = () => {
 };
 
 export default App;
-App;
