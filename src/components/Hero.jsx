@@ -5,6 +5,7 @@ import sale from "../assets/sale.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import AOS from "aos";
 
 const imageList = [
   {
@@ -41,25 +42,43 @@ const Hero = () => {
       <div className="container pb-8 sm:pb-0">
         <Swiper
           modules={[Autoplay]}
-          loop={true}
+          loop={false}
           speed={800}
           slidesPerView={1}
           autoplay={{
             delay: 4000,
             disableOnInteraction: false,
-            pauseOnMouseEnter: false,
           }}
+          // onSlideChangeTransitionEnd={() => {
+          //   AOS.refresh();
+          // }}
         >
           {imageList.map((data) => (
             <SwiperSlide key={data.id}>
               <div className="grid grid-cols-1 sm:grid-cols-2">
                 {/* text content section */}
                 <div className="flex flex-col justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left sm:order-1 order-2 relative z-10">
-                  <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent">
+                  <h1
+                    data-aos="zoom-out"
+                    data-aos-duration="500"
+                    data-aos-once="true"
+                    className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary via-primary to-secondary bg-clip-text text-transparent"
+                  >
                     {data.title}
                   </h1>
-                  <p className="text-sm">{data.description}</p>
-                  <div>
+                  <p
+                    data-aos="fade-up"
+                    data-aos-duration="500"
+                    data-aos-delay="100"
+                    className="text-sm"
+                  >
+                    {data.description}
+                  </p>
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="500"
+                    data-aos-delay="300"
+                  >
                     <button className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full">
                       Order Now
                     </button>
@@ -67,7 +86,11 @@ const Hero = () => {
                 </div>
                 {/* image section  */}
                 <div className=" order-1 sm:order-2">
-                  <div className="relative">
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-once="true"
+                    className="relative"
+                  >
                     <img
                       src={data.img}
                       className="w-[300px] h-[300px] sm:h-[450px] sm:w-[450px] sm:scale-105 object-contain mx-auto"
