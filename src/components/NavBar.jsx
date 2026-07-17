@@ -55,7 +55,7 @@ const DropdownLinks = [
   },
 ];
 
-const NavBar = () => {
+const NavBar = ({ handleOrderPopup }) => {
   return (
     <div
       className="shadow-md bg-white 
@@ -89,7 +89,7 @@ const NavBar = () => {
             </div>
             {/* order button */}
             <button
-              onClick={() => alert("Ordering is not available right now")}
+              onClick={() => handleOrderPopup()}
               className="bg-gradient-to-r from-primary to-secondary
              text-white py-1 px-4 rounded-full flex items-center
              gap-2 group cursor-pointer overflow-hidden"
@@ -108,7 +108,7 @@ const NavBar = () => {
         </div>
       </div>
       {/* lower navbar */}
-      <div className="flex justify-center">
+      <div data-aos="zoom-in" className="flex justify-center">
         <ul className="sm:flex hidden items-center gap-4">
           {Menu.map((data) => (
             <li key={data.id}>
