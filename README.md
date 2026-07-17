@@ -120,7 +120,7 @@ You can extend this project by adding:
 
 ## License
 
-This project is available under the MIT License unless otherwise specified.
+This project is available for education purposes.
 
 ## Author
 
